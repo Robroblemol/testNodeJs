@@ -9,7 +9,7 @@ var http = require("http"),// indico que es un tipo http
        // asi que lo iteramos
        for (var i = variables.length-1; i >= 0; i--) {
          var value = eval(variables[i]);//evaluamos el string
-         html_string = html_string.replace("{"+variables[0]+"}",value);
+         html_string = html_string.replace("{"+variables[i]+"}",value);
        }
        var nombre = "Roberto";// variable a cambiar
 
