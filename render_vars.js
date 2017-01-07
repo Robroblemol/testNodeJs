@@ -9,6 +9,7 @@ var http = require("http"),// indico que es un tipo http
        // nos devuelve el arreglo con lo que encontró entre llaves
        // asi que lo iteramos
        for (var i = variables.length-1; i >= 0; i--) {
+         //ejecucion como codigo js
          var value = eval(variables[i]);//evaluamos el string
          html_string = html_string.replace("{"+variables[i]+"}",value);
        }
