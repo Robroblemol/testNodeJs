@@ -4,7 +4,7 @@ var http = require("http"),// indico que es un tipo http
 //var html = fs.readFileSync("./index.html");// leemos el archivo
 http.createServer(function(req,res) {
  fs.readFile("./index.html",function (err,html) {
-   res.writeHead(200,{"Content-Type":"text/html"});
+   res.writeHead(200,{"Content-Type":"text/html"});// se agrega encabzados
    res.write(html);
    res.end();
  });// version asincrona para leer datos
