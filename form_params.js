@@ -1,17 +1,23 @@
 var http = require("http"),// indico que es un tipo http
     fs = require("fs");
     http.createServer(function(req,res) {
-     fs.readFile("./index.html",function (err,html) {
+      // buscamos si hay alguna incidencia con la palabra favicon
+      if(req.url.indexOf("favicon.ico") > 0){
+        return;// para que no siga con el resto del codigo
+      }
+      //imprimimos solicitud
+      console.log("=========\n\n");
+      console.log(req);
+      console.log("=========\n\n");
 
+     fs.readFile("./index.html",function (err,html) {
        var html_string = html.toString();// convertimos el html en cadena
        var variables = html_string.match(/[^\{\}]+(?=\})/g); // expresion regular?¿?...
-       var nombre = "Roberto";// variable a cambiar
-       // nos devuelve el arreglo con lo que encontró entre llaves
-       // asi que lo iteramos
+       var nombre = ";"
+       //if (req.url.indexOf("?"))
+
        for (var i = variables.length-1; i >= 0; i--) {
-         //ejecucion como codigo js
-         var value = eval(variables[i]);//evaluamos el string
-         // reemplazamos el con
+         var value = eval(variables[i]);
          html_string = html_string.replace("{"+variables[i]+"}",value);
        }
 
