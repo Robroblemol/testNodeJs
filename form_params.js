@@ -13,11 +13,11 @@ var http = require("http"),// indico que es un tipo http
      fs.readFile("./index.html",function (err,html) {
        var html_string = html.toString();// convertimos el html en cadena
        var variables = html_string.match(/[^\{\}]+(?=\})/g); // expresion regular?¿?...
-       var nombre = ";"
+       var nombre = "";
        var array_params = [];
        var parametros = {} // hash con parametros
        // buscamos ? quiere decir que no estan enviado parametros
-       if (req.url.indexOf("?") < 0){
+       if (req.url.indexOf("?") > 0){
          // /?nombre  -> separamos el path que es lo que sea que va despues de /
          var url_data = req.url.split("?");
          // & -> se usa para separar parametros
