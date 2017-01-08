@@ -24,7 +24,7 @@ var http = require("http"),// indico que es un tipo http
          var array_params = url_data[1].split("&");
          // obtenemos: [nombre=nombre,data=loquesea]
        }
-       for (var i = 0; i < array_params.length; i++) {
+       for (var i = array_params.length-1; i >=0; i--) {
          var param = array_params[i];
          // nombre= Nombre;
          var param_data = param.split("=");
@@ -40,7 +40,7 @@ var http = require("http"),// indico que es un tipo http
          // parametros[variable[i]]
          //parametros[]
          html_string = html_string.replace("{"+variables[i]+"}",parametros[variable]);
-         
+
        }
 
        res.writeHead(200,{"Content-Type":"text/html"});// se agrega encabzados JSON
