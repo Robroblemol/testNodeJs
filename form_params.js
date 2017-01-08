@@ -37,8 +37,8 @@ var http = require("http"),// indico que es un tipo http
          //var value = eval(variables[i]);
          //[nombre: Nombre]
          var variable = variables[i];
-         // parametros[variable[i]]
-         //parametros[]
+         // parametros[variable]
+         //parametros[nombre]
          html_string = html_string.replace("{"+variables[i]+"}",parametros[variable]);
 
        }
