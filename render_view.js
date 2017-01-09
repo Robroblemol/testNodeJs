@@ -1,4 +1,4 @@
-function render(html,variables) {
+function render(html,parametros) {
   var variables = html.match(/[^\{\}]+(?=\})/g); // expresion regular?¿?...
   var nombre = "";
 
